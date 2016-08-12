@@ -8,5 +8,8 @@ router.get('/', function(req, res, next) {
 router.get('/resources', function(req, res, next) {
   res.render('rpage.hbs');
 });
+router.get('/ourbeautifulmap', function(req, res, next) {
+  res.render('AHH.hbs');
+});
 
 module.exports = router;
