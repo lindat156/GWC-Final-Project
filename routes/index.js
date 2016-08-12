@@ -5,5 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('finalproject.hbs');
 });
+router.get('/resources', function(req, res, next) {
+  res.render('rpage.hbs');
+});
 
 module.exports = router;
