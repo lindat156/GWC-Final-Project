@@ -1,24 +1,17 @@
 <!doctype html>
-<html>
-  <head>
-   </head>
-  <body>
+  <html>
+   <head>
+    <title>Chat Application</title>
+    <link rel='stylesheet' href='/stylesheets/stylechat.css' type='text/css'/>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/javascripts/chat.js"></script>
+  </head>
+  <body> 
     <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+    <span id="notifyUser"></span>
+    <form id="form" action="" onsubmit="return submitfunction();" > 
+      <input type="hidden" id="user" value="" /><input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type yor message here.." /><input type="submit" id="button" value="Send"/> 
     </form>
   </body>
-  <script>
-
-    function sendMessage(evt) {
-  console.log('sending message', evt);
-  socket.emit('chat message', document.querySelector('#message-input').value);
-  document.querySelector('#message-input').value = '';
-}
-
-    var socket = io();
-    var button = document.querySelector('input[type=button]');
-    console.log(button);
-    button.addEventListener('click', sendMessage);
-  </script>
 </html>
